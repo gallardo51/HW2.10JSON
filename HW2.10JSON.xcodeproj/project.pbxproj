@@ -61,9 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				BAA8C6F428C4D524005C7AF1 /* Models */,
+				BAA8C6ED28C4D477005C7AF1 /* ViewControllers */,
 				BAA8C6F128C4D4DC005C7AF1 /* Services */,
 				BAA8C6EC28C4D46C005C7AF1 /* App */,
-				BAA8C6ED28C4D477005C7AF1 /* ViewControllers */,
 				BAA8C6EB28C4D456005C7AF1 /* Storyboards */,
 				BAA8C6EE28C4D486005C7AF1 /* Resources */,
 			);
