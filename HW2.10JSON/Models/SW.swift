@@ -5,19 +5,23 @@
 //  Created by Александр Соболев on 04.09.2022.
 //
 
-struct WebsiteDescription: Decodable {
-    let climate: String?
-    let diameter: String?
+struct Starships: Decodable {
     let name: String?
-    let orbital_period: String?
-    let population: String?
-    let residents: [String]?
-    let rotation: String?
-    let surface: String?
-    let terrain: String?
+    let manufacturer: String?
+    let cost_in_credits: String?
+    let lenght: String?
+    let max_atmosphering_speed: String?
+    let crew: String?
+    let passengers: String?
     let url: String?
 }
 
+struct WebsiteDescription: Decodable {
+    let count: Int?
+    let next: String?
+    let results: [Starships]
+}
+
 enum Link: String {
-    case starWars = "https://swapi.dev/api/"
+    case starWars = "https://swapi.dev/api/starships"
 }
