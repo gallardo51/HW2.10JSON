@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA3B05D428C4E5C6008FD4B4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B05D328C4E5C6008FD4B4 /* TableViewCell.swift */; };
 		BAA8C6D828C4D2D9005C7AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8C6D728C4D2D9005C7AF1 /* AppDelegate.swift */; };
 		BAA8C6DA28C4D2D9005C7AF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8C6D928C4D2D9005C7AF1 /* SceneDelegate.swift */; };
 		BAA8C6DC28C4D2D9005C7AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8C6DB28C4D2D9005C7AF1 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA3B05D328C4E5C6008FD4B4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BAA8C6D428C4D2D9005C7AF1 /* HW2.10JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.10JSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA8C6D728C4D2D9005C7AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA8C6D928C4D2D9005C7AF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		BAA8C6D628C4D2D9005C7AF1 /* HW2.10JSON */ = {
 			isa = PBXGroup;
 			children = (
+				BA3B05D328C4E5C6008FD4B4 /* TableViewCell.swift */,
 				BAA8C6F428C4D524005C7AF1 /* Models */,
 				BAA8C6ED28C4D477005C7AF1 /* ViewControllers */,
 				BAA8C6F128C4D4DC005C7AF1 /* Services */,
@@ -195,6 +198,7 @@
 				BAA8C6F028C4D4CD005C7AF1 /* NetworkManager.swift in Sources */,
 				BAA8C6DC28C4D2D9005C7AF1 /* ViewController.swift in Sources */,
 				BAA8C6D828C4D2D9005C7AF1 /* AppDelegate.swift in Sources */,
+				BA3B05D428C4E5C6008FD4B4 /* TableViewCell.swift in Sources */,
 				BAA8C6F328C4D520005C7AF1 /* SW.swift in Sources */,
 				BAA8C6DA28C4D2D9005C7AF1 /* SceneDelegate.swift in Sources */,
 			);
@@ -345,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBC2FW8GZY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HW2.10JSON/Info.plist;
+				INFOPLIST_FILE = HW2.10JSON/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -374,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBC2FW8GZY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HW2.10JSON/Info.plist;
+				INFOPLIST_FILE = HW2.10JSON/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
