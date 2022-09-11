@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private var lessons: Lessons?
+    private var lessons: [NumberLessons] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,13 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lessons?.results.count ?? 0
+        lessons.count 
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        let lesson = lessons?.results[indexPath.row]
-        cell.configure(with: lesson )
+        let lesson = lessons[indexPath.row]
+        cell.configure(with: lesson)
     
         return cell
     }

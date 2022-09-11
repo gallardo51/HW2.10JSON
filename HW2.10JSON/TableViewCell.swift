@@ -20,10 +20,10 @@ class TableViewCell: UITableViewCell {
 }
 
 // MARK: - Public methods
-func configure(with numberLesson: numberLessons?) {
-    nameLessonLabel.text = numberLesson?.name
+    func configure(with numberLessons: NumberLessons) {
+        nameLessonLabel.text = numberLessons.name
     DispatchQueue.global().async {
-        guard let stringUrl = numberLesson?.image else { return }
+        guard let stringUrl = numberLessons.image else { return }
         guard let imageUrl = URL(string: stringUrl) else { return }
         guard let imageData = try? Data(contentsOf: imageUrl) else { return }
         DispatchQueue.main.async {

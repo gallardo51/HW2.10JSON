@@ -13,7 +13,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(from url: String?, with completion: @escaping(Lessons) -> Void) {
+    func fetchData(from url: String?, with completion: @escaping([NumberLessons]) -> Void) {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
@@ -24,7 +24,7 @@ class NetworkManager {
             }
             
             do {
-                let lessons = try JSONDecoder().decode(Lessons.self, from: data)
+                let lessons = try JSONDecoder().decode([NumberLessons].self, from: data)
                 DispatchQueue.main.async {
                     completion(lessons)
                 }
