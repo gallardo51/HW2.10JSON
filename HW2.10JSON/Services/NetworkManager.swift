@@ -13,23 +13,23 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(from url: String?, with completion: @escaping(Starships) -> Void) {
-        guard let url = URL(string: Link.starWars.rawValue) else { return}
+    func fetchData(from url: String?, with completion: @escaping(Lessons) -> Void) {
+        guard let stringURL = url else { return }
+        guard let url = URL(string: stringURL) else { return }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
+                print(error?.localizedDescription ?? "No error")
                 return
-        }
-            
-            do{
-                let starships = try JSONDecoder().decode(Starships.self, from: data)
+            }
+            do {
+                let lessons = try JSONDecoder().decode(Lessons.self, from: data)
                 DispatchQueue.main.async {
-                  completion(starships)
+                    completion(lessons)
                 }
             } catch let error {
                 print(error)
-                }
-            }.resume()
+            }
+        }.resume()
     }
 }

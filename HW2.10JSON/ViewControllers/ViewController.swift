@@ -9,30 +9,31 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private var starships: Starships?
+    private var lessons: Lessons?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 40
         tableView.backgroundColor = .white
         
-        fetchData(from: Link.starWars.rawValue)
+        fetchData(from: Link.countLessons.rawValue)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        lessons?.results.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        cell.configure(with: starships)
+        let lesson = lessons?.results[indexPath.row]
+        cell.configure(with: lesson )
     
         return cell
     }
     
     private func fetchData(from url: String?) {
-        NetworkManager.shared.fetchData(from: url) { starships in
-            self.starships = starships
+        NetworkManager.shared.fetchData(from: url) { lessons in
+            self.lessons = lessons
             self.tableView.reloadData()
         }
     }

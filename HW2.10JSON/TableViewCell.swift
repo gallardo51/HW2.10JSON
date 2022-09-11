@@ -15,15 +15,15 @@ class TableViewCell: UITableViewCell {
         starshipImage.contentMode = .scaleAspectFit
         starshipImage.clipsToBounds = true
         starshipImage.layer.cornerRadius = starshipImage.frame.height / 2
-        starshipImage.backgroundColor = .white
+        starshipImage.backgroundColor = .gray
     }
 }
 
 // MARK: - Public methods
-func configure(with starship: Starships?) {
-    nameStarshipLabel.text = starship?.name
+func configure(with numberLesson: numberLessons?) {
+    nameStarshipLabel.text = numberLesson?.name
     DispatchQueue.global().async {
-        guard let stringUrl = starship?.url else { return }
+        guard let stringUrl = numberLesson?.image else { return }
         guard let imageUrl = URL(string: stringUrl) else { return }
         guard let imageData = try? Data(contentsOf: imageUrl) else { return }
         DispatchQueue.main.async {

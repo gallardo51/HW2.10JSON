@@ -6,7 +6,11 @@
 //
 
 struct Lessons: Decodable {
-    let id: String?
+    let results: [numberLessons]
+}
+
+struct numberLessons: Decodable {
+    let id: Int?
     let name: String?
     let date: String?
     let image: String?
