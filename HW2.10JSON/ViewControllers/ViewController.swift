@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 40
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .gray
         
         fetchData(from: Link.countLessons.rawValue)
     }

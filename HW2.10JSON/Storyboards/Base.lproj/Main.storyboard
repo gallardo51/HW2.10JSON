@@ -100,8 +100,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameStarshipLabel" destination="VgA-xO-nk7" id="GuW-xA-fSE"/>
-                                    <outlet property="starshipImage" destination="FmH-1j-cKV" id="5G2-MD-SDl"/>
+                                    <outlet property="lessonImage" destination="FmH-1j-cKV" id="5G2-MD-SDl"/>
+                                    <outlet property="nameLessonLabel" destination="VgA-xO-nk7" id="GuW-xA-fSE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
