@@ -15,7 +15,7 @@ class TableViewCell: UITableViewCell {
         lessonImage.contentMode = .scaleAspectFit
         lessonImage.clipsToBounds = true
         lessonImage.layer.cornerRadius = lessonImage.frame.height / 2
-        lessonImage.backgroundColor = .gray
+        lessonImage.backgroundColor = .orange
     }
 }
 
