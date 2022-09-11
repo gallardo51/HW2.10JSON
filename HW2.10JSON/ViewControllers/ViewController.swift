@@ -9,12 +9,12 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private var starships: Starships
+    private var starships: Starships?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 40
-        tableView.backgroundColor = .black
+        tableView.backgroundColor = .white
         
         fetchData(from: Link.starWars.rawValue)
     }
@@ -25,6 +25,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        cell.configure(with: starships)
     
         return cell
     }

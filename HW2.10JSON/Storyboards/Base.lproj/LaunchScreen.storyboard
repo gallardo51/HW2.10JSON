@@ -16,8 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6052008e06de0a43e844db507a44ed98" translatesAutoresizingMaskIntoConstraints="NO" id="oiJ-DT-OF0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="High_resolution_wallpaper_background_ID_77701138970" translatesAutoresizingMaskIntoConstraints="NO" id="oiJ-DT-OF0">
                                 <rect key="frame" x="0.0" y="-1" width="414" height="903"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.90000000000000002" height="1"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6052008e06de0a43e844db507a44ed98" width="2000" height="2334"/>
+        <image name="High_resolution_wallpaper_background_ID_77701138970" width="1920" height="1200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

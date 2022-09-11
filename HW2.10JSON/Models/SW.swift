@@ -5,23 +5,14 @@
 //  Created by Александр Соболев on 04.09.2022.
 //
 
-struct Starships: Decodable {
+struct Lessons: Decodable {
+    let id: String?
     let name: String?
-    let manufacturer: String?
-    let cost_in_credits: String?
-    let lenght: String?
-    let max_atmosphering_speed: String?
-    let crew: String?
-    let passengers: String?
-    let url: String?
-}
-
-struct WebsiteDescription: Decodable {
-    let count: Int?
-    let next: String?
-    let results: [Starships]
+    let date: String?
+    let image: String?
+    let link: String?
 }
 
 enum Link: String {
-    case starWars = "https://swapi.dev/api/starships"
+    case countLessons = "https://icodeschool.ru/json1.php"
 }
