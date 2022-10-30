@@ -13,20 +13,32 @@ struct StarWarsFilms: Decodable {
 }
 
 struct Films: Decodable {
-    let title: String?
+    let title: String
     let episodeId: Int?
-    let openingCrawl: String?
-    let director: String?
-    let producer: String?
-    let releaseDate: String?
+    let openingCrawl: String
+    let director: String
+    let producer: String
+    let releaseDate: String
     let characters: [String?]
     let planets: [String?]
     let starships: [String?]
     let vehicles: [String?]
     let species: [String]
-    let created: String?
-    let edited: String?
+    let created: String
+    let edited: String
     let url: String?
+    
+    var description: String {
+        """
+    Title: \(title)
+    Opening Crawl: \(openingCrawl)
+    Director: \(director)
+    Producer: \(producer)
+    Release Date: \(releaseDate)
+    Created: \(created)
+    Edited: \(edited)
+    """
+    }
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
@@ -67,31 +79,6 @@ struct Characters: Decodable {
         case gender = "gender"
     }
 }
-
-struct Planets: Decodable {
-    let name: String?
-    let rotationPeriod: Int?
-    let orbitalPeriod: Int?
-    let diametre: Int?
-    let climate: String?
-    let gravity: String?
-    let terrain: String?
-    let surfaceWater: String?
-    let population: Int?
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case rotationPeriod = "rotation_period"
-        case orbitalPeriod = "orbital_period"
-        case diameter = "diameter"
-        case climate = "climate"
-        case gravity = "gravity"
-        case terrain = "terrain"
-        case surfaceWater = "surface_water"
-        case population = "population"
-    }
-}
-
 
 enum Link: String {
     case countLessons = "https://swapi.dev/api/films/"
