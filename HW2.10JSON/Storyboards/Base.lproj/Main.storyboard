@@ -62,9 +62,9 @@
         <!--View Controller-->
         <scene sceneID="OVz-GL-WMv">
             <objects>
-                <tableViewController id="wqw-ep-ZDt" customClass="ViewController" customModule="HW2_10JSON" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="wqw-ep-ZDt" customClass="ViewController" customModule="HW2_10JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KyK-Zj-dGZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -107,6 +107,7 @@
                                 <connections>
                                     <outlet property="lessonImage" destination="FmH-1j-cKV" id="5G2-MD-SDl"/>
                                     <outlet property="nameLessonLabel" destination="VgA-xO-nk7" id="GuW-xA-fSE"/>
+                                    <segue destination="vSo-av-SbE" kind="showDetail" id="UeI-P7-chm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -118,7 +119,43 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TER-fQ-cl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840.57971014492762" y="152.67857142857142"/>
+            <point key="canvasLocation" x="878" y="148"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0MR-CS-YfU">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="vSo-av-SbE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="StE-uM-MbK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te1-3J-9ML">
+                                <rect key="frame" x="20" y="200" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-lu-ADT">
+                                <rect key="frame" x="20" y="355.5" width="280" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back to Menu"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dvr-K0-yqK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jPt-lu-ADT" firstAttribute="top" secondItem="te1-3J-9ML" secondAttribute="bottom" constant="135" id="2Js-lb-2HD"/>
+                            <constraint firstItem="jPt-lu-ADT" firstAttribute="leading" secondItem="dvr-K0-yqK" secondAttribute="leading" constant="20" id="7D1-me-RTb"/>
+                            <constraint firstItem="dvr-K0-yqK" firstAttribute="trailing" secondItem="te1-3J-9ML" secondAttribute="trailing" constant="20" id="8dt-WN-Lqt"/>
+                            <constraint firstItem="te1-3J-9ML" firstAttribute="top" secondItem="dvr-K0-yqK" secondAttribute="top" constant="200" id="R4g-tE-MWD"/>
+                            <constraint firstItem="dvr-K0-yqK" firstAttribute="trailing" secondItem="jPt-lu-ADT" secondAttribute="trailing" constant="20" id="ZCV-iC-yMX"/>
+                            <constraint firstItem="te1-3J-9ML" firstAttribute="leading" secondItem="dvr-K0-yqK" secondAttribute="leading" constant="20" id="kzL-xI-wKs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pdg-3l-aUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711.875" y="147.88732394366198"/>
         </scene>
     </scenes>
     <resources>
