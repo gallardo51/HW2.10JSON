@@ -20,7 +20,7 @@ class TableViewCell: UITableViewCell {
 }
 
 // MARK: - Public methods
-    func configure(with numberLessons: NumberLessons) {
+    func configure(with numberLessons: StarWarsFilms) {
         nameLessonLabel.text = numberLessons.name
     DispatchQueue.global().async {
         guard let stringUrl = numberLessons.image else { return }

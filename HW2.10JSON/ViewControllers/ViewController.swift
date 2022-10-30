@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private var lessons: [NumberLessons] = []
+    private var lessons: [StarWarsFilms] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
