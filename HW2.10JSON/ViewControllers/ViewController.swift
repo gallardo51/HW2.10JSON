@@ -9,31 +9,31 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private var lessons: [StarWarsFilms] = []
+    private var films: StarWarsFilms?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 68
         tableView.backgroundColor = .gray
         
-        fetchData(from: Link.countLessons.rawValue)
+        fetchData(from: Link.filmsSW.rawValue)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lessons.count 
+        films?.results.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        let lesson = lessons[indexPath.row]
-        cell.configure(with: lesson)
+        let film = films?.results[indexPath.row]
+        cell.configure(with: film)
     
         return cell
     }
     
     private func fetchData(from url: String?) {
-        NetworkManager.shared.fetchData(from: url) { lessons in
-            self.lessons = lessons
+        NetworkManager.shared.fetchData(from: url) { films in
+            self.films = films
             self.tableView.reloadData()
         }
     }

@@ -81,5 +81,5 @@ struct Characters: Decodable {
 }
 
 enum Link: String {
-    case countLessons = "https://swapi.dev/api/films/"
+    case filmsSW = "https://swapi.dev/api/films/"
 }
