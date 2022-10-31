@@ -17,22 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="nHC-2V-ca4">
-                                <rect key="frame" x="50" y="135.5" width="220" height="297"/>
+                                <rect key="frame" x="25" y="102" width="270" height="364.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="496876" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-F6-pTI">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4d049b55736540b957220db4fda3dd80" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-F6-pTI">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="250"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="220" id="0ox-Xn-Vo7"/>
-                                            <constraint firstAttribute="width" constant="220" id="Wcl-mr-gGF"/>
+                                            <constraint firstAttribute="height" constant="250" id="0ox-Xn-Vo7"/>
+                                            <constraint firstAttribute="width" constant="270" id="Wcl-mr-gGF"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJh-pc-qd0">
-                                        <rect key="frame" x="69.5" y="255" width="81.5" height="42"/>
+                                        <rect key="frame" x="94.5" y="285" width="81.5" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Start ">
                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
@@ -48,7 +43,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZYU-Kf-9IP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="nHC-2V-ca4" firstAttribute="centerX" secondItem="ywc-2Q-qKB" secondAttribute="centerX" id="TKC-Uw-l6A"/>
                             <constraint firstItem="nHC-2V-ca4" firstAttribute="centerY" secondItem="ywc-2Q-qKB" secondAttribute="centerY" id="alt-f4-wAc"/>
@@ -159,8 +154,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="496876" width="2560" height="1600"/>
+        <image name="4d049b55736540b957220db4fda3dd80" width="1500" height="700"/>
         <image name="Storm_Trooper" width="660" height="663"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
