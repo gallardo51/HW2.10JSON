@@ -31,8 +31,11 @@ struct Films: Decodable {
     var description: String {
         """
     Title: \(title)
+    
     Opening Crawl: \(openingCrawl)
+    
     Director: \(director)
+    
     Producer: \(producer)
     Release Date: \(releaseDate)
     Created: \(created)

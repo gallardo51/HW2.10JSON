@@ -62,6 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="systemYellowColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="2fl-Fg-Uqc" customClass="TableViewCell" customModule="HW2_10JSON" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="320" height="65"/>
@@ -78,11 +79,12 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgA-xO-nk7">
-                                            <rect key="frame" x="73" y="23" width="215" height="19"/>
+                                            <rect key="frame" x="73" y="22" width="215" height="20"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
-                                                        <font key="NSFont" size="16" name="AkayaKanadaka-Regular"/>
+                                                        <color key="NSColor" systemColor="systemYellowColor"/>
+                                                        <font key="NSFont" size="17" name="AkayaKanadaka-Regular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -90,6 +92,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="FmH-1j-cKV" firstAttribute="leading" secondItem="78o-jw-FoB" secondAttribute="leading" constant="16" id="63Z-fV-tOh"/>
                                         <constraint firstItem="VgA-xO-nk7" firstAttribute="leading" secondItem="FmH-1j-cKV" secondAttribute="trailing" constant="7" id="9nU-pU-LtG"/>
@@ -193,7 +197,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UDd-V4-JCX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="W4r-As-5Zf" firstAttribute="leading" secondItem="UDd-V4-JCX" secondAttribute="leading" constant="20" id="VNX-ew-vZS"/>
                             <constraint firstItem="Ius-sf-c7Y" firstAttribute="leading" secondItem="UDd-V4-JCX" secondAttribute="leading" constant="20" id="VWp-RQ-PX4"/>
@@ -242,6 +246,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

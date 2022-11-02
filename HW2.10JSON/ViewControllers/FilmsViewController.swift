@@ -19,6 +19,7 @@ class FilmsViewController: UIViewController {
         super.viewDidLoad()
         
         descriptionLabel.text = film.description
+        descriptionLabel.textColor = .yellow
 
     }
 }

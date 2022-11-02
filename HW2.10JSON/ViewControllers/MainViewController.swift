@@ -14,7 +14,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 70
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .black
         
         fetchData(from: Link.filmsSW.rawValue)
     }
