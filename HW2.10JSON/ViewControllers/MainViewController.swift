@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class MainTableViewController: UITableViewController {
 
     private var films: StarWarsFilms?
 
@@ -35,6 +35,22 @@ class ViewController: UITableViewController {
         NetworkManager.shared.fetchData(from: url) { films in
             self.films = films
             self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let film = films?.results[indexPath.row]
+        
+        for viewController in viewControllers {
+            if let detailVC = viewController as? FilmsViewController {
+                detailVC.film = film
+            } else if let characterTVC = viewController as? UINavigationController {
+                let characterInfo = characterTVC.topViewController as! CharacterTableViewController
+                characterInfo.film = film 
+            }
         }
     }
 }

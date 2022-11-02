@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="147.99107142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Table View Controller-->
         <scene sceneID="OVz-GL-WMv">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="wqw-ep-ZDt" customClass="ViewController" customModule="HW2_10JSON" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="wqw-ep-ZDt" customClass="MainTableViewController" customModule="HW2_10JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KyK-Zj-dGZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
         <!--Characters-->
         <scene sceneID="MhB-mw-Gjf">
             <objects>
-                <viewController id="mAs-0B-vsR" sceneMemberID="viewController">
+                <viewController id="mAs-0B-vsR" customClass="CharacterTableViewController" customModule="HW2_10JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mDX-a0-lm5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,24 +170,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpu-fK-otO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2735.625" y="392.95774647887322"/>
+            <point key="canvasLocation" x="2736" y="454"/>
         </scene>
-        <!--Info about Film-->
+        <!--FilmsViewController-->
         <scene sceneID="2fG-xF-fPI">
             <objects>
-                <viewController id="4Pw-ab-UfB" sceneMemberID="viewController">
+                <viewController title="FilmsViewController" modalPresentationStyle="fullScreen" id="4Pw-ab-UfB" customClass="FilmsViewController" customModule="HW2_10JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mmt-UT-GYX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4r-As-5Zf">
-                                <rect key="frame" x="20" y="200" width="280" height="20.5"/>
+                                <rect key="frame" x="20" y="20" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ius-sf-c7Y">
-                                <rect key="frame" x="20" y="440.5" width="280" height="31"/>
+                                <rect key="frame" x="20" y="70.5" width="280" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back to Menu"/>
                             </button>
@@ -197,13 +197,16 @@
                         <constraints>
                             <constraint firstItem="W4r-As-5Zf" firstAttribute="leading" secondItem="UDd-V4-JCX" secondAttribute="leading" constant="20" id="VNX-ew-vZS"/>
                             <constraint firstItem="Ius-sf-c7Y" firstAttribute="leading" secondItem="UDd-V4-JCX" secondAttribute="leading" constant="20" id="VWp-RQ-PX4"/>
-                            <constraint firstItem="W4r-As-5Zf" firstAttribute="top" secondItem="UDd-V4-JCX" secondAttribute="top" constant="200" id="Xrc-Mr-JLg"/>
-                            <constraint firstItem="Ius-sf-c7Y" firstAttribute="top" secondItem="W4r-As-5Zf" secondAttribute="bottom" constant="220" id="ck3-aG-MEx"/>
+                            <constraint firstItem="W4r-As-5Zf" firstAttribute="top" secondItem="UDd-V4-JCX" secondAttribute="top" constant="20" id="Xrc-Mr-JLg"/>
+                            <constraint firstItem="Ius-sf-c7Y" firstAttribute="top" secondItem="W4r-As-5Zf" secondAttribute="bottom" constant="30" id="ck3-aG-MEx"/>
                             <constraint firstItem="UDd-V4-JCX" firstAttribute="trailing" secondItem="W4r-As-5Zf" secondAttribute="trailing" constant="20" id="o5s-T5-p8b"/>
                             <constraint firstItem="UDd-V4-JCX" firstAttribute="trailing" secondItem="Ius-sf-c7Y" secondAttribute="trailing" constant="20" id="vfC-KF-6Hp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info about Film" image="list.bullet.rectangle.portrait.fill" catalog="system" id="jkY-0g-E1F"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="W4r-As-5Zf" id="8Cf-Q2-Iyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6F-6b-H3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
