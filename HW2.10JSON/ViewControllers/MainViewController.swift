@@ -39,19 +39,11 @@ class MainTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarController = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarController.viewControllers else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let film = films?.results[indexPath.row]
+        let detailVC = segue.destination as! FilmsViewController
+        detailVC.film = film
         
-        for viewController in viewControllers {
-            if let detailVC = viewController as? FilmsViewController {
-                detailVC.film = film
-            } else if let characterTVC = viewController as? UINavigationController {
-                let characterInfo = characterTVC.topViewController as! CharacterTableViewController
-                characterInfo.film = film 
-            }
-        }
     }
 }
 

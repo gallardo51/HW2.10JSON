@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
 class NetworkManager {
     
     static let shared = NetworkManager()
@@ -34,4 +40,29 @@ class NetworkManager {
             
         }.resume()
     }
+    
+    func fetchCharacter(from url: String, completion: @escaping(Result<Characters, NetworkError>) -> Void) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.noData))
+                print(error?.localizedDescription ?? "no description")
+                return
+            }
+            
+            do {
+                let character = try JSONDecoder().decode(Characters.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(character))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
 }
+

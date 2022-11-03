@@ -19,7 +19,7 @@ struct Films: Decodable {
     let director: String
     let producer: String
     let releaseDate: String
-    let characters: [String?]
+    let characters: [String]
     let planets: [String?]
     let starships: [String?]
     let vehicles: [String?]
@@ -62,14 +62,14 @@ struct Films: Decodable {
 }
 
 struct Characters: Decodable {
-    let name: String?
-    let height: Int?
-    let mass: Int?
-    let hairColor: String?
-    let skinColor: String?
-    let eyeColor: String?
-    let birthYear: String?
-    let gender: String?
+    let name: String
+    let height: Int
+    let mass: Int
+    let hairColor: String
+    let skinColor: String
+    let eyeColor: String
+    let birthYear: String
+    let gender: String
     
     enum CodingKeys: String, CodingKey {
         case name = "name"

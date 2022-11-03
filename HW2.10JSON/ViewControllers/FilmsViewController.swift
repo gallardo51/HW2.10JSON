@@ -22,4 +22,12 @@ class FilmsViewController: UIViewController {
         descriptionLabel.textColor = .yellow
 
     }
+    @IBAction func backToMenuButtonPressed(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let charactersVC = segue.destination as? CharacterTableViewController else { return }
+        charactersVC.film = film
+}
 }
