@@ -9,14 +9,14 @@ import UIKit
 
 class CharacterTableViewController: UITableViewController {
     
-    var film: Films!
-    var characters: [Characters] = []
     
+    var film: Films!
+    var characters: [Characters] = [] 
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.rowHeight = 70
-       
+               
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +24,7 @@ class CharacterTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! TableViewCell
 
         var content = cell.defaultContentConfiguration()
         let characterURL = film.characters[indexPath.row]
@@ -41,11 +41,6 @@ class CharacterTableViewController: UITableViewController {
         }
 
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let character = characters[indexPath.row]
-        performSegue(withIdentifier: "showEpisode", sender: character)
     }
 }
 

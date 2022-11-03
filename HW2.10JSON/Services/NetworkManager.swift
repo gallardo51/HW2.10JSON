@@ -41,19 +41,20 @@ class NetworkManager {
         }.resume()
     }
     
+
     func fetchCharacter(from url: String, completion: @escaping(Result<Characters, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
             return
         }
-        
+
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 completion(.failure(.noData))
                 print(error?.localizedDescription ?? "no description")
                 return
             }
-            
+
             do {
                 let character = try JSONDecoder().decode(Characters.self, from: data)
                 DispatchQueue.main.async {

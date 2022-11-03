@@ -71,6 +71,12 @@ struct Characters: Decodable {
     let birthYear: String
     let gender: String
     
+    var description: String {
+        """
+    Name: \(name)
+    """
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case height = "height"

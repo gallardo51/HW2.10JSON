@@ -9,17 +9,17 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lessonImage: UIImageView!
-    @IBOutlet weak var nameLessonLabel: UILabel! {
+    @IBOutlet weak var filmImage: UIImageView!
+    @IBOutlet weak var nameFilmLabel: UILabel! {
     didSet {
-        lessonImage.contentMode = .scaleAspectFit
-        lessonImage.clipsToBounds = true
-        lessonImage.layer.cornerRadius = lessonImage.frame.height / 2
+        filmImage.contentMode = .scaleAspectFit
+        filmImage.clipsToBounds = true
+        filmImage.layer.cornerRadius = filmImage.frame.height / 2
     }
 }
 
 // MARK: - Public methods
     func configure(with films: Films?) {
-        nameLessonLabel.text = films?.title
+        nameFilmLabel.text = films?.title
 }
 }

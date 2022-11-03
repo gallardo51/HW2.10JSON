@@ -104,8 +104,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="lessonImage" destination="FmH-1j-cKV" id="5G2-MD-SDl"/>
-                                    <outlet property="nameLessonLabel" destination="VgA-xO-nk7" id="GuW-xA-fSE"/>
+                                    <outlet property="filmImage" destination="FmH-1j-cKV" id="5G2-MD-SDl"/>
+                                    <outlet property="nameFilmLabel" destination="VgA-xO-nk7" id="GuW-xA-fSE"/>
                                     <segue destination="ODg-g7-B8v" kind="showDetail" id="BWe-74-xEA"/>
                                 </connections>
                             </tableViewCell>
