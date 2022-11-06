@@ -9,17 +9,19 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    //MARK: - IB Outlets
+    
     @IBOutlet weak var filmImage: UIImageView!
     @IBOutlet weak var nameFilmLabel: UILabel! {
-    didSet {
-        filmImage.contentMode = .scaleAspectFit
-        filmImage.clipsToBounds = true
-        filmImage.layer.cornerRadius = filmImage.frame.height / 2
+        didSet {
+            filmImage.contentMode = .scaleAspectFit
+            filmImage.clipsToBounds = true
+            filmImage.layer.cornerRadius = filmImage.frame.height / 2
+        }
     }
-}
-
-// MARK: - Public methods
+    
+    // MARK: - Public methods
     func configure(with films: Films?) {
         nameFilmLabel.text = films?.title
-}
+    }
 }

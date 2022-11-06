@@ -8,9 +8,11 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-
+    
+    //MARK: - Private properties
     private var films: StarWarsFilms?
-
+    
+    //MARK: - UI View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 70
@@ -19,6 +21,7 @@ class MainTableViewController: UITableViewController {
         fetchData(from: Link.filmsSW.rawValue)
     }
     
+    //MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         films?.results.count ?? 0
     }
@@ -27,7 +30,7 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         let film = films?.results[indexPath.row]
         cell.configure(with: film)
-    
+        
         return cell
     }
     
@@ -38,6 +41,7 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let film = films?.results[indexPath.row]
