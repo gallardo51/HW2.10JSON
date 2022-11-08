@@ -42,7 +42,7 @@ class NetworkManager {
     }
     
     
-    func fetchCharacter(from url: String, completion: @escaping(Result<Characters, NetworkError>) -> Void) {
+    func fetchCharacter(from url: String, completion: @escaping(Result<Character, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
             return
@@ -56,7 +56,7 @@ class NetworkManager {
             }
             
             do {
-                let character = try JSONDecoder().decode(Characters.self, from: data)
+                let character = try JSONDecoder().decode(Character.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(character))
                 }

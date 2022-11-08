@@ -11,7 +11,7 @@ class CharacterTableViewController: UITableViewController {
     
     //MARK: - Public properties
     var film: Films!
-    var characters: [Characters] = [] 
+    var characters: [Character] = [] 
     
     //MARK: - UI View controller methods
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class CharacterTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as UITableViewCell
         
         var content = cell.defaultContentConfiguration()
         let characterURL = film.characters[indexPath.row]

@@ -61,10 +61,10 @@ struct Films: Decodable {
     }
 }
 
-struct Characters: Decodable {
+struct Character: Decodable {
     let name: String
-    let height: Int
-    let mass: Int
+    let height: String
+    let mass: String
     let hairColor: String
     let skinColor: String
     let eyeColor: String
