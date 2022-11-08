@@ -31,7 +31,7 @@ class CharacterTableViewController: UITableViewController {
         
         var content = cell.defaultContentConfiguration()
         let characterURL = film.characters[indexPath.row]
-        content.textProperties.color = .black
+        content.textProperties.color = .yellow
         NetworkManager.shared.fetchCharacter(from: characterURL) { result in
             switch result {
             case .success(let character):
