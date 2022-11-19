@@ -11,7 +11,7 @@ class CharacterTableViewController: UITableViewController {
     
     //MARK: - Public properties
     var film: Films!
-    var characters: [Character] = [] 
+    var characters: [Character] = []
     
     //MARK: - UI View controller methods
     override func viewDidLoad() {
@@ -45,5 +45,11 @@ class CharacterTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let character = characters[indexPath.row]
+        guard let charactersInfoVC = segue.destination as? CharacterInfoViewController else { return }
+        charactersInfoVC.characters = character
+    }
 }
-

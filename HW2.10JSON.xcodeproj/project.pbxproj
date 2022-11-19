@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA3B05D428C4E5C6008FD4B4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B05D328C4E5C6008FD4B4 /* TableViewCell.swift */; };
+		BA6265C92929018D006435DD /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6265C82929018D006435DD /* CharacterInfoViewController.swift */; };
 		BA79A0672912D0E8008AAAEE /* FilmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79A0662912D0E8008AAAEE /* FilmsViewController.swift */; };
 		BA79A0692912DA22008AAAEE /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79A0682912DA22008AAAEE /* CharacterViewController.swift */; };
 		BAA8C6D828C4D2D9005C7AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8C6D728C4D2D9005C7AF1 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		BA3B05D328C4E5C6008FD4B4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BA6265C82929018D006435DD /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
 		BA79A0662912D0E8008AAAEE /* FilmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsViewController.swift; sourceTree = "<group>"; };
 		BA79A0682912DA22008AAAEE /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		BAA8C6D428C4D2D9005C7AF1 /* HW2.10JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.10JSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				BAA8C6DB28C4D2D9005C7AF1 /* MainViewController.swift */,
 				BA79A0662912D0E8008AAAEE /* FilmsViewController.swift */,
 				BA79A0682912DA22008AAAEE /* CharacterViewController.swift */,
+				BA6265C82929018D006435DD /* CharacterInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA79A0672912D0E8008AAAEE /* FilmsViewController.swift in Sources */,
+				BA6265C92929018D006435DD /* CharacterInfoViewController.swift in Sources */,
 				BAA8C6F028C4D4CD005C7AF1 /* NetworkManager.swift in Sources */,
 				BAA8C6DC28C4D2D9005C7AF1 /* MainViewController.swift in Sources */,
 				BAA8C6D828C4D2D9005C7AF1 /* AppDelegate.swift in Sources */,

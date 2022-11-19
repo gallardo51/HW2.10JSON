@@ -74,6 +74,20 @@ struct Character: Decodable {
     var description: String {
         """
     Name: \(name)
+    
+    Height: \(height)
+    
+    Mass: \(mass)
+    
+    Hair color: \(hairColor)
+    
+    Skin color: \(skinColor)
+    
+    Eye color: \(eyeColor)
+    
+    Birth year: \(birthYear)
+    
+    Gender: \(gender)
     """
     }
     
