@@ -41,7 +41,6 @@ class NetworkManager {
         }.resume()
     }
     
-    
     func fetchCharacter(from url: String, completion: @escaping(Result<Character, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
