@@ -10,7 +10,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     //MARK: - Private properties
-    private var films: StarWarsFilms?
+    private var films: [StarWarsFilms] = []
     
     //MARK: - UI View controller methods
     override func viewDidLoad() {
@@ -23,19 +23,19 @@ class MainTableViewController: UITableViewController {
     
     //MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        films?.results.count ?? 0
+        films.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        let film = films?.results[indexPath.row]
+        let film = films[indexPath.row]
         cell.configure(with: film)
         
         return cell
     }
     
     private func fetchData(from url: String?) {
-        NetworkManager.shared.fetchData(from: url) { films in
+        NetworkManager.shared.fetchData { films in
             self.films = films
             self.tableView.reloadData()
         }
@@ -44,7 +44,7 @@ class MainTableViewController: UITableViewController {
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let film = films?.results[indexPath.row]
+        let film = films[indexPath.row]
         let detailVC = segue.destination as! FilmsViewController
         detailVC.film = film
         

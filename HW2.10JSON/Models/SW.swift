@@ -5,59 +5,80 @@
 //  Created by Александр Соболев on 04.09.2022.
 //
 
-struct StarWarsFilms: Decodable {
+struct StarWarsFilms {
     let count: Int?
     let next: String?
     let previous: String?
-    let results: [Films]
+    let results: Films?
+    
+    init(value: [String: Any]) {
+        count = value["count"] as? Int
+        
+        next = value["next"] as? String
+        
+        previous = value["previous"] as? String
+        
+        let resultsDict = value["results"] as? [String: Any] ?? [:]
+        results = Films(value: resultsDict)
+    }
+    
+    static func getFilms(from value: Any) -> [StarWarsFilms]? {
+        guard let value = value as? [String : Any] else { return [] }
+        guard let results = value["results"] as? [[String: Any]] else { return [] }
+        return results.compactMap { StarWarsFilms(value: $0)}
+    }
 }
-
-struct Films: Decodable {
-    let title: String
+    
+struct Films: Codable {
+    let title: String?
     let episodeId: Int?
-    let openingCrawl: String
-    let director: String
-    let producer: String
-    let releaseDate: String
-    let characters: [String]
-    let planets: [String?]
-    let starships: [String?]
-    let vehicles: [String?]
-    let species: [String]
-    let created: String
-    let edited: String
+    let openingCrawl: String?
+    let director: String?
+    let producer: String?
+    let releaseDate: String?
+    let characters: [String]?
+    let planets: [String?]?
+    let starships: [String?]?
+    let vehicles: [String?]?
+    let species: [String]?
+    let created: String?
+    let edited: String?
     let url: String?
+    
+    init(value: [String: Any]) {
+        title = value["title"] as? String
+        
+        episodeId = value["episode_id"] as? Int
+        
+        openingCrawl = value["opening_crawl"] as? String
+        
+        director = value["director"] as? String
+        producer = value["producer"] as? String
+        releaseDate = value["release_date"] as? String
+        characters = value["characters"] as? [String]
+        planets = value["planets"] as? [String]
+        starships = value["starships"] as? [String]
+        vehicles = value["vehicles"] as? [String]
+        species = value["species"] as? [String]
+        created = value["created"] as? String
+        edited = value["edited"] as? String
+        url = value["url"] as? String
+        
+    }
     
     var description: String {
         """
-    Title: \(title)
+    Title: \(title ?? "")
     
-    Opening Crawl: \(openingCrawl)
+    Opening Crawl: \(openingCrawl ?? "")
     
-    Director: \(director)
+    Director: \(director ?? "")
     
-    Producer: \(producer)
-    Release Date: \(releaseDate)
-    Created: \(created)
-    Edited: \(edited)
+    Producer: \(producer ?? "")
+    Release Date: \(releaseDate ?? "")
+    Created: \(created ?? "")
+    Edited: \(edited ?? "")
     """
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case episodeId = "episode_id"
-        case openingCrawl = "opening_crawl"
-        case director = "director"
-        case producer = "producer"
-        case releaseDate = "release_date"
-        case characters = "characters"
-        case planets = "planets"
-        case starships = "starships"
-        case vehicles = "vehicles"
-        case species = "species"
-        case created = "created"
-        case edited = "edited"
-        case url = "url"
     }
 }
 
