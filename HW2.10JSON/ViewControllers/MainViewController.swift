@@ -28,8 +28,9 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        var content = cell.defaultContentConfiguration()
         let film = films[indexPath.row]
-        cell.configure(with: film)
+        cell.contentConfiguration = content
         
         return cell
     }

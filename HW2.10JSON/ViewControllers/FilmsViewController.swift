@@ -13,7 +13,8 @@ class FilmsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     //MARK: - Public properties
-    var film: Films!
+    var film: StarWarsFilms?
+    var movie: Films!
     
     private var spinnerView = UIActivityIndicatorView()
     
@@ -21,7 +22,7 @@ class FilmsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionLabel.text = film.description
+        descriptionLabel.text = movie.description
         descriptionLabel.textColor = .yellow
         
     }
@@ -33,6 +34,6 @@ class FilmsViewController: UIViewController {
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let charactersVC = segue.destination as? CharacterTableViewController else { return }
-        charactersVC.film = film
+        charactersVC.film = movie
     }
 }

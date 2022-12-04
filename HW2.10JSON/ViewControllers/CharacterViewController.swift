@@ -10,6 +10,7 @@ import UIKit
 class CharacterTableViewController: UITableViewController {
     
     //MARK: - Public properties
+    var movie: StarWarsFilms?
     var film: Films!
     var characters: [Character] = []
     
@@ -23,14 +24,14 @@ class CharacterTableViewController: UITableViewController {
     
     //MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        film.characters?.count
+        characters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as UITableViewCell
         
         var content = cell.defaultContentConfiguration()
-        let characterURL = film.characters[indexPath.row]
+        let characterURL = characters
         content.textProperties.color = .yellow
         NetworkManager.shared.fetchCharacter(from: characterURL) { result in
             switch result {

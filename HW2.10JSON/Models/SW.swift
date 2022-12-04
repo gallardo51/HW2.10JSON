@@ -53,15 +53,25 @@ struct Films: Codable {
         openingCrawl = value["opening_crawl"] as? String
         
         director = value["director"] as? String
+        
         producer = value["producer"] as? String
+        
         releaseDate = value["release_date"] as? String
+        
         characters = value["characters"] as? [String]
+        
         planets = value["planets"] as? [String]
+        
         starships = value["starships"] as? [String]
+        
         vehicles = value["vehicles"] as? [String]
+        
         species = value["species"] as? [String]
+        
         created = value["created"] as? String
+        
         edited = value["edited"] as? String
+        
         url = value["url"] as? String
         
     }
