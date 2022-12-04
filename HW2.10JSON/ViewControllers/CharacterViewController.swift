@@ -31,7 +31,7 @@ class CharacterTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as UITableViewCell
         
         var content = cell.defaultContentConfiguration()
-        let characterURL = characters
+        let characterURL = film.characters[indexPath.row]
         content.textProperties.color = .yellow
         NetworkManager.shared.fetchCharacter(from: characterURL) { result in
             switch result {
