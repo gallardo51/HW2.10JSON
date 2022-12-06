@@ -92,7 +92,7 @@ struct Films: Codable {
     }
 }
 
-struct Character: Decodable {
+struct Character: Codable {
     let name: String
     let height: String
     let mass: String
