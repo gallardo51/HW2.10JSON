@@ -36,7 +36,7 @@ struct Films: Codable {
     let director: String?
     let producer: String?
     let releaseDate: String?
-    let characters: [String]?
+    let characters: Character?
     let planets: [String?]?
     let starships: [String?]?
     let vehicles: [String?]?
@@ -58,7 +58,8 @@ struct Films: Codable {
         
         releaseDate = value["release_date"] as? String
         
-        characters = value["characters"] as? [String]
+        let characterDict = value["characters"] as? [String: Any] ?? [:]
+        characters = Character(value: characterDict)
         
         planets = value["planets"] as? [String]
         
@@ -93,32 +94,51 @@ struct Films: Codable {
 }
 
 struct Character: Codable {
-    let name: String
-    let height: String
-    let mass: String
-    let hairColor: String
-    let skinColor: String
-    let eyeColor: String
-    let birthYear: String
-    let gender: String
+    let name: String?
+    let height: String?
+    let mass: String?
+    let hairColor: String?
+    let skinColor: String?
+    let eyeColor: String?
+    let birthYear: String?
+    let gender: String?
+    
+    init(value: [String: Any]) {
+        name = value["name"] as? String
+        
+        height = value["height"] as? String
+        
+        mass = value["mass"] as? String
+        
+        hairColor = value["hair_color"] as? String
+        
+        skinColor = value["skin_color"] as? String
+        
+        eyeColor = value["eye_color"] as? String
+        
+        birthYear = value["birth_year"] as? String
+        
+        gender = value["gender"] as? String
+        
+    }
     
     var description: String {
         """
-    Name: \(name)
+    Name: \(name ?? "")
     
-    Height: \(height)
+    Height: \(height ?? "")
     
-    Mass: \(mass)
+    Mass: \(mass ?? "")
     
-    Hair color: \(hairColor)
+    Hair color: \(hairColor ?? "")
     
-    Skin color: \(skinColor)
+    Skin color: \(skinColor ?? "")
     
-    Eye color: \(eyeColor)
+    Eye color: \(eyeColor ?? "")
     
-    Birth year: \(birthYear)
+    Birth year: \(birthYear ?? "")
     
-    Gender: \(gender)
+    Gender: \(gender ?? "")
     """
     }
     
