@@ -27,30 +27,30 @@ class CharacterTableViewController: UITableViewController {
         characters.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as UITableViewCell
-        
-        var content = cell.defaultContentConfiguration()
-        let characterURL = characters[indexPath.row]
-        content.textProperties.color = .yellow
-        NetworkManager.shared.fetchCharacter(from: characterURL) { result in
-            switch result {
-            case .success(let character):
-                self.characters.append(character)
-                content.text = character.name
-                cell.contentConfiguration = content
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-        return cell
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as UITableViewCell
+//        
+//        var content = cell.defaultContentConfiguration()
+//        let characterURL = film.characters?.name[indexPath.row]
+//        content.textProperties.color = .yellow
+//        NetworkManager.shared.fetchCharacter(from: characterURL) { result in
+//            switch result {
+//            case .success(let character):
+//                self.characters.append(character)
+//                content.text = character.name
+//                cell.contentConfiguration = content
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//        
+//        return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let character = characters[indexPath.row]
-        guard let charactersInfoVC = segue.destination as? CharacterInfoViewController else { return }
-        charactersInfoVC.characters = character
-    }
-}
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//        let character = characters[indexPath.row]
+//        guard let charactersInfoVC = segue.destination as? CharacterInfoViewController else { return }
+//        charactersInfoVC.characters = character
+//    }
+//}
